@@ -27,6 +27,7 @@ def takeCommand():
         return "None"
     return query
 
+# **** Greet ME Function ****
 if __name__ == "__main__":
     while True:
         query = takeCommand().lower()
@@ -39,7 +40,8 @@ if __name__ == "__main__":
                 if "go to sleep" in query:
                     speak("Ok sir , You can call me anytime")
                     break 
-
+                
+                # **** Conversation Function ****
                 elif "hello" in query:
                     speak("Hello sir, how are you ?")
                 elif "i am fine" in query:
