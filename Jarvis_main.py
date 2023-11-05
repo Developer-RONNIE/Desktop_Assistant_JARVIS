@@ -1,5 +1,7 @@
 import pyttsx3
 import speech_recognition 
+import requests
+from bs4 import BeautifulSoup
 
 engine = pyttsx3.init("sapi5")
 voices = engine.getProperty("voices")
@@ -50,3 +52,39 @@ if __name__ == "__main__":
                     speak("Perfect, sir")
                 elif "thank you" in query:
                     speak("you are welcome, sir")
+
+
+                # **** Searching From WEB ( Google , Youtube , Wiki ) ****
+                elif "google" in query:
+                    from SearchNow import searchGoogle
+                    searchGoogle(query)
+                elif "youtube" in query:
+                    from SearchNow import searchYoutube
+                    searchYoutube(query)
+                elif "wikipedia" in query:
+                    from SearchNow import searchWikipedia
+                    searchWikipedia(query)
+
+
+                 # **** Searching From WEB ( Temperature, Weather ) ****
+                elif "temperature" in query:
+                    search = "temperature in Bhubaneswar"
+                    url = f"https://www.google.com/search?q={search}"
+                    r  = requests.get(url)
+                    data = BeautifulSoup(r.text,"html.parser")
+                    temp = data.find("div", class_ = "BNeawe").text
+                    speak(f"current{search} is {temp}")
+                elif "weather" in query:
+                    search = "weather in Bhubaneswar"
+                    url = f"https://www.google.com/search?q={search}"
+                    r  = requests.get(url)
+                    data = BeautifulSoup(r.text,"html.parser")
+                    temp = data.find("div", class_ = "BNeawe").text
+                    speak(f"current{search} is {temp}")
+
+    
+
+                
+                
+
+                
