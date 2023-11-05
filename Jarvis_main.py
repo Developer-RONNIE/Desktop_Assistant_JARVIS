@@ -2,6 +2,8 @@ import pyttsx3
 import speech_recognition 
 import requests
 from bs4 import BeautifulSoup
+from Time_helper import get_formatted_time
+
 
 engine = pyttsx3.init("sapi5")
 voices = engine.getProperty("voices")
@@ -81,6 +83,12 @@ if __name__ == "__main__":
                     data = BeautifulSoup(r.text,"html.parser")
                     temp = data.find("div", class_ = "BNeawe").text
                     speak(f"current{search} is {temp}")
+
+                # **** Time Function ****
+                elif "the time" in query:
+                    formatted_time = get_formatted_time()
+                    speak(f"Sir, the time is {formatted_time}")
+
 
     
 
