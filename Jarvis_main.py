@@ -55,6 +55,14 @@ if __name__ == "__main__":
                 elif "thank you" in query:
                     speak("you are welcome, sir")
 
+                # **** Open and Close apps/websites ****
+                elif "open" in query:
+                    from Dictapp import openappweb
+                    openappweb(query)
+                elif "close" in query:
+                    from Dictapp import closeappweb
+                    closeappweb(query)
+
 
                 # **** Searching From WEB ( Google , Youtube , Wiki ) ****
                 elif "google" in query:
@@ -88,6 +96,11 @@ if __name__ == "__main__":
                 elif "the time" in query:
                     formatted_time = get_formatted_time()
                     speak(f"Sir, the time is {formatted_time}")
+
+                # **** Finally Sleep Function ****
+                elif "finally sleep" in query:
+                    speak("Going to sleep,sir")
+                    exit()
 
 
     
