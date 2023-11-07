@@ -1,6 +1,8 @@
 import pyttsx3
 import speech_recognition 
 import requests
+import os 
+import pyautogui
 from bs4 import BeautifulSoup
 from Time_helper import get_formatted_time
 
@@ -30,6 +32,13 @@ def takeCommand():
         print("Say that again")
         return "None"
     return query
+
+# **** Alarm Function ****
+def alarm(query):
+    timehere = open("Alarmtext.txt","a")
+    timehere.write(query)
+    timehere.close()
+    os.startfile("alarm.py")
 
 # **** Greet ME Function ****
 if __name__ == "__main__":
@@ -91,6 +100,14 @@ if __name__ == "__main__":
                     data = BeautifulSoup(r.text,"html.parser")
                     temp = data.find("div", class_ = "BNeawe").text
                     speak(f"current{search} is {temp}")
+
+                # **** Alarm Function ****
+                elif "set an alarm" in query:
+                    print("input time example:- 10 and 10 and 10")
+                    speak("Set the time")
+                    a = input("Please tell the time :- ")
+                    alarm(a)
+                    speak("Done,sir")
 
                 # **** Time Function ****
                 elif "the time" in query:
