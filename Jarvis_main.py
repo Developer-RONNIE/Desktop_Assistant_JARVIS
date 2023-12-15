@@ -1,8 +1,10 @@
+import webbrowser
 import pyttsx3
 import speech_recognition 
 import requests
 import os 
 import pyautogui
+import random
 from bs4 import BeautifulSoup
 from Time_helper import get_formatted_time
 
@@ -61,7 +63,7 @@ if __name__ == "__main__":
                     speak("that's great, sir")
                 elif "how are you" in query:
                     speak("Perfect, sir")
-                elif "thank you" in query:
+                elif "thanks" in query:
                     speak("you are welcome, sir")
 
 
@@ -108,14 +110,14 @@ if __name__ == "__main__":
 
                  # **** Searching From WEB ( Temperature, Weather ) ****
                 elif "temperature" in query:
-                    search = "temperature in Bhubaneswar"
+                    search = "temperature in the Current city"
                     url = f"https://www.google.com/search?q={search}"
                     r  = requests.get(url)
                     data = BeautifulSoup(r.text,"html.parser")
                     temp = data.find("div", class_ = "BNeawe").text
                     speak(f"current{search} is {temp}")
                 elif "weather" in query:
-                    search = "weather in Bhubaneswar"
+                    search = "weather in the Jamshedpur"
                     url = f"https://www.google.com/search?q={search}"
                     r  = requests.get(url)
                     data = BeautifulSoup(r.text,"html.parser")
@@ -134,6 +136,31 @@ if __name__ == "__main__":
                 elif "the time" in query:
                     formatted_time = get_formatted_time()
                     speak(f"Sir, the time is {formatted_time}")
+
+                # **** Reminder Function ****
+                elif "remember that" in query:
+                    rememberMessage = query.replace("remember that","")
+                    rememberMessage = query.replace("jarvis","")
+                    speak("You told me "+rememberMessage)
+                    remember = open("Remember.txt","a")
+                    remember.write(rememberMessage)
+                    remember.close()
+                elif "what do you remember" in query:
+                    remember = open("Remember.txt","r")
+                    speak("You told me " + remember.read())
+
+                # **** Playlist Function ****
+                elif "tired" in query:
+                    speak("Playing your favourite songs, sir")
+                    a = (1,2,3) # You can choose any number of songs (I have only choosen 3)
+                    b = random.choice(a)
+                    if b==1:
+                        webbrowser.open("https://www.youtube.com/watch?v=WWr9086eWtY")#Here put the link of your video)
+                    elif b==2:
+                        webbrowser.open("https://www.youtube.com/watch?v=nCNqPgXDYhY")
+                    elif b==3:
+                        webbrowser.open("https://www.youtube.com/watch?v=HrnrqYxYrbk")
+
 
                 # **** Finally Sleep Function ****
                 elif "finally sleep" in query:
