@@ -56,7 +56,12 @@ This project is highly based on voice command
 ### 12. Playlist Using Jarvis
 - You are free to modify as many number of songs into the playlist 
 
-### 13. 
+### 13. News Function
+- Make sure to get your own news API from 👉 (https://newsapi.org/)
+- Change your API in NewsRead.py
+- example : "business" : "https://newsapi.org/v2/top-headlines?country=in&category=#paste your API here",
+- reads news for you 
+- partially vocal, partically text input based 
 
 
 # Requirements: 

@@ -5,6 +5,7 @@ import requests
 import os 
 import pyautogui
 import random
+import keyboard 
 from bs4 import BeautifulSoup
 from Time_helper import get_formatted_time
 
@@ -106,6 +107,12 @@ if __name__ == "__main__":
                 elif "wikipedia" in query:
                     from SearchNow import searchWikipedia
                     searchWikipedia(query)
+
+                # **** News Function ****
+                elif "news" in query:
+                    from NewsRead import latestnews
+                    latestnews() 
+                    # need to fix problems in api keys 
 
 
                  # **** Searching From WEB ( Temperature, Weather ) ****
