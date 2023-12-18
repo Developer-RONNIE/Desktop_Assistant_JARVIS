@@ -14,11 +14,11 @@ def speak(audio):
 def latestnews():
     # make sure to use your own api keys 
     api_dict = {"business" : "https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=465642fe2fcd4965bf386973a82c21bd",
-            "entertainment" : "https://newsapi.org/v2/top-headlines?country=in&category=entertainment&apiKey=https://newsapi.org/v2/everything?q=tesla&from=2023-11-17&sortBy=publishedAt&apiKey=465642fe2fcd4965bf386973a82c21bd",
-            "health" : "https://newsapi.org/v2/top-headlines?country=in&category=health&apiKey=https://newsapi.org/v2/top-headlines?country=in&category=health&apiKey=465642fe2fcd4965bf386973a82c21bd",
-            "science" :"https://newsapi.org/v2/top-headlines?country=in&category=science&apiKey=https://newsapi.org/v2/top-headlines?country=in&apiKey=465642fe2fcd4965bf386973a82c21bd",
-            "sports" :"https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=465642fe2fcd4965bf386973a82c21bd",
-            "technology" :"https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=465642fe2fcd4965bf386973a82c21bd"
+            "entertainment" : "https://newsapi.org/v2/top-headlines?country=in&category=entertainment&apiKey=465642fe2fcd4965bf386973a82c21bd",
+            "health" : "https://newsapi.org/v2/top-headlines?country=in&category=health&apiKey=465642fe2fcd4965bf386973a82c21bd",
+            "science" :"https://newsapi.org/v2/top-headlines?country=in&category=science&apiKey=465642fe2fcd4965bf386973a82c21bd",
+            "sports" :"https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=465642fe2fcd4965bf386973a82c21bd",
+            "technology" :"https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=465642fe2fcd4965bf386973a82c21bd"
     }
 
     content = None
