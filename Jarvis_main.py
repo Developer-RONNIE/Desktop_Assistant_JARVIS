@@ -112,7 +112,16 @@ if __name__ == "__main__":
                 elif "news" in query:
                     from NewsRead import latestnews
                     latestnews() 
-                    # need to fix problems in api keys 
+                
+
+                # **** Calculator Function ****
+                elif "calculate" in query:
+                    from Calculate import WolfRamAlpha
+                    from Calculate import Calc
+                    query = query.replace("calculate","")
+                    query = query.replace("jarvis","")
+                    Calc(query)
+    
 
 
                  # **** Searching From WEB ( Temperature, Weather ) ****

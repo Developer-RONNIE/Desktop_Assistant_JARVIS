@@ -63,6 +63,7 @@ This project is highly based on voice command
 - reads news for you 
 - partially vocal, partically text input based 
 
-
+### 14. Calculator Function
+- Sign up here 👉 (https://www.wolframalpha.com/)
 # Requirements: 
 ( pip install, wheels, python version : 3.8, pyaudio)
